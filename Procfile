@@ -1,1 +1,1 @@
-web: gunicorn True_Orgsnic.wsgi 
+web: gunicorn True_Organic.wsgi 
