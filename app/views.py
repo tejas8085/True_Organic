@@ -53,7 +53,7 @@ def show_cart(request):
 		user = request.user
 		cart = Cart.objects.filter(user=user)
 		amount = 0.0
-		shipping_amount = 70.0
+		shipping_amount = 30.0
 		totalamount=0.0
 		cart_product = [p for p in Cart.objects.all() if p.user == request.user]
 		print(cart_product)
@@ -75,7 +75,7 @@ def plus_cart(request):
 		c.quantity+=1
 		c.save()
 		amount = 0.0
-		shipping_amount= 70.0
+		shipping_amount= 30.0
 		cart_product = [p for p in Cart.objects.all() if p.user == request.user]
 		for p in cart_product:
 			tempamount = (p.quantity * p.product.discounted_price)
@@ -101,7 +101,7 @@ def minus_cart(request):
 		c.quantity-=1
 		c.save()
 		amount = 0.0
-		shipping_amount= 70.0
+		shipping_amount= 30.0
 		cart_product = [p for p in Cart.objects.all() if p.user == request.user]
 		for p in cart_product:
 			tempamount = (p.quantity * p.product.discounted_price)
@@ -149,7 +149,7 @@ def remove_cart(request):
 		c = Cart.objects.get(Q(product=prod_id) & Q(user=request.user))
 		c.delete()
 		amount = 0.0
-		shipping_amount= 70.0
+		shipping_amount= 30.0
 		cart_product = [p for p in Cart.objects.all() if p.user == request.user]
 		for p in cart_product:
 			tempamount = (p.quantity * p.product.discounted_price)

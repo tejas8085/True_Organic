@@ -13,6 +13,8 @@
           <h5>Product: {{item.product.title}}</h5>
           <p>Quantity: {{item.quantity}}</p>
           <p class="fw-bold">Price: {{item.total_cost}}</p>
+          <p class="fw-bold">Total Cost + Rs. 30  = {{totalcost}}</p>
+           <small>(Rs. 30 Shipping Charge)</small> <hr>
         </div>
       </div>
     {% endfor %}
