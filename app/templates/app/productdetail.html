@@ -15,11 +15,11 @@
 
    {% if user.is_authenticated  %}
     {% if item_already_in_cart  %}
-     <a href="{% url 'showcart' %}" class="btn btn-warning shadow px-5 py-2 ms-4">Go to Cart</a>
+     <a href="{% url 'showcart' %}" class="btn btn-warning shadow px-3 py-2 ms-4">Go to Cart</a>
     {% else %}
      <form action="/add-to-cart" class="d-inline">
       <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
-      <button type="submit" class="btn btn-danger shadow px-5 py-2">Add to Cart</button>
+      <button type="submit" class="btn btn-danger shadow px-4 py-2">Add to Cart</button>
      </form>
     {% endif %}
    {% endif %}

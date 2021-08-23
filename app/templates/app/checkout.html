@@ -20,6 +20,8 @@
   </div>
   <div class="col-sm-4 offset-sm-1">
     <h4>Select Shipping Address</h4>
+    <a style="color: cadetblue;" href="{% url 'profile' %}"><I>click here to update your address</I></a>
+
     <hr>
     <form action="/paymentdone">
     {% for ad in add %}
