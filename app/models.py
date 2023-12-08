@@ -54,8 +54,7 @@ class Customer(models.Model):
 
 CATEGORY_CHOICES = (
  ('M', 'Fruits'),
-#  ('L', 'Laptop'),
-#  ('TW', 'Top Wear'),
+
  ('BW', ' Vegetables'),
 )
 class Product(models.Model):
@@ -79,7 +78,7 @@ class Cart(models.Model):
  def __str__(self):
   return str(self.id)
   
-  # Below Property will be used by checkout.html page to show total cost in order summary
+  #  checkout.html 
  @property
  def total_cost(self):
    return self.quantity * self.product.discounted_price
@@ -100,7 +99,7 @@ class OrderPlaced(models.Model):
  ordered_date = models.DateTimeField(auto_now_add=True)
  status = models.CharField(max_length=50,choices=STATUS_CHOICES,default='Pending')
 
-  # Below Property will be used by orders.html page to show total cost
+  #  orders.html
  @property
  def total_cost(self):
    return self.quantity * self.product.discounted_price
